@@ -8,7 +8,7 @@ Echoe.new('fibber_mailman', '0.0.1') do |p|
   p.author          = "http://fernandoguillen.info"  
   p.email           = "fguillen.mail@gmail.com"  
   p.ignore_pattern  = []
-  p.development_dependencies = [ "net/pop", "tmail", "test/unit" ]  
+  p.development_dependencies = [ "tmail" ]  
 end  
   
 # Dir["#{File.dirname(__FILE__)}/tasks/*.rake"].sort.each { |ext| load ext }
