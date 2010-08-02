@@ -1,4 +1,6 @@
-# NetPopMock
+# FibberMailman
+
+**Hey Mailmal.. lie to me!**
 
 Very simple library for mocking a
 
