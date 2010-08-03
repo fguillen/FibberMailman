@@ -1,5 +1,7 @@
 # FibberMailman
 
+<img src="http://farm5.static.flickr.com/4096/4855853753_840f16cb2b.jpg" />
+
 **Hey Mailmal.. lie to me!**
 
 Very simple library for mocking a
