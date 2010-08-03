@@ -1,0 +1,58 @@
+= FibberMailman
+
+http://farm5.static.flickr.com/4096/4855853753_840f16cb2b.jpg
+
+<b>Hey Mailmal.. lie to me!</b>
+
+Very simple library for mocking a
+
+    Net::POP3.start( ... ) do |pop|
+      <any code here>
+    end
+    
+call
+
+== Install
+
+    $ [sudo] gem install fibber_mailman
+
+or
+
+    $ script/plugin install git://github.com/fguillen/FibberMailman.git
+
+== Usage
+    require 'fibber_mailman'
+    
+    raw_mails = [
+      File.read( "/fixtures/mail1.raw_mail" ) ),
+      File.read( "/fixtures/mail2.raw_mail" ) ),
+    ]
+    
+    FibberMailman.lie_to_me( raw_mails ) do
+      <your code that uses the Net::POP3.start on any point>
+    end
+    
+Not any real POP call will be done.
+
+The mock will simulate that the mails received was the fake *raw_mails*.
+
+See the *test* folder.
+
+== TODO
+
+Only
+    pop.each_mail do |m|
+      <code here>
+    end
+
+is supported.
+
+== Special Thanks
+
+* To the people on this Ruby Forum Thread: http://www.ruby-forum.com/topic/214129
+
+== Credits
+
+Author:: Fernando Guillen: http://fernandoguillen.info
+Copyright:: Copyright (c) 2010 Fernando Guillen
+License:: Released under the MIT license.
