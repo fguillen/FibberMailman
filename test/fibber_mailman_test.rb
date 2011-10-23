@@ -7,20 +7,19 @@ require File.dirname(__FILE__) + "/../lib/fibber_mailman"
 class FibberMailmanTest < Test::Unit::TestCase
   def test_mocking
     raw_mails = [
-      File.read( File.dirname(__FILE__) + "/fixtures/mail1.raw_mail" ),
-      File.read( File.dirname(__FILE__) + "/fixtures/mail2.raw_mail" ),
+      "raw_mail 1",
+      "raw_mail 2",
     ]
 
-    mails_subjects = []    
+    mails = []    
     FibberMailman.lie_to_me( raw_mails ) do
       Net::POP3.start( 'server', 'port', 'user', 'pass' ) do |pop|
         pop.each_mail do |mail|
-          tmail = TMail::Mail.parse( mail.pop )
-          mails_subjects << tmail.subject
+          mails << mail.pop
         end
       end
     end
     
-    assert_equal( ['test 1', 'test 2'], mails_subjects )
+    assert_equal( ["raw_mail 1", "raw_mail 2"], mails )
   end
 end
