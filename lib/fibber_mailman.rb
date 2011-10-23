@@ -29,7 +29,7 @@ end
 # 
 # The mock will simulate that the mails received was the fake **raw_mails**.
 #
-class FibberMailman
+module FibberMailman
   def self.raw_mails
     @@raw_mails
   end

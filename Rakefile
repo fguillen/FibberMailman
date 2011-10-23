@@ -4,7 +4,7 @@ require 'rake'
 require 'rake/testtask'
 require 'bundler'
 
-# include Rake::DSL
+include Rake::DSL
 
 Bundler::GemHelper.install_tasks
 
