@@ -12,9 +12,7 @@ Gem::Specification.new do |s|
   s.description = "FibberMailman lie to you when you ask for a Net::POP3.start call."
 
   s.rubyforge_project = "FibberMailman"
-  
-  s.add_dependency "tmail"
-  
+    
   s.add_development_dependency "rake"
 
   s.files         = `git ls-files`.split("\n")
