@@ -30,6 +30,10 @@ end
 # The mock will simulate that the mails received was the fake **raw_mails**.
 #
 class FibberMailman
+  def self.raw_mails
+    @@raw_mails
+  end
+  
   def self.lie_to_me( raw_mails )
     @@raw_mails = raw_mails
     
@@ -42,7 +46,7 @@ class FibberMailman
       
       alias_method :orig_mails, :mails
       def mails
-        pop_mails = @@raw_mails.map { |raw_mail| FibberPop.new( raw_mail ) }
+        pop_mails = FibberMailman.raw_mails.map { |raw_mail| FibberPop.new( raw_mail ) }
         return pop_mails
       end
     end
